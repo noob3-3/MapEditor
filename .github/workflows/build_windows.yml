@@ -31,6 +31,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install setuptools wheel
 
+    - name: Install PyYAML separately
+      run: |
+        pip install --no-build-isolation PyYAML==5.4.1
+
     - name: Install project dependencies
       run: |
         pip install -r requirements.txt
