@@ -81,8 +81,8 @@ jobs:
 
     - name: Build executable
       run: |
-        EXE_NAME="mapeditor_windows"
-        pyinstaller --onefile --windowed --distpath dist/windows --name $EXE_NAME main.py
+        $env:EXE_NAME="mapeditor_windows"
+        pyinstaller --onefile --windowed --distpath dist/windows --name $env:EXE_NAME main.py
 
     - name: Upload artifact
       uses: actions/upload-artifact@v3
