@@ -45,7 +45,7 @@ jobs:
         fi
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: ${{ matrix.platform }}-executable
         path: dist/${{ matrix.platform }}/
