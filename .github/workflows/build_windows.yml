@@ -102,11 +102,13 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: ubuntu-executable
+        path: ./
 
     - name: Download Windows executable
       uses: actions/download-artifact@v3
       with:
         name: windows-executable
+        path: ./
 
     - name: Create Release
       id: create_release
@@ -125,7 +127,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ubuntu-executable/mapeditor_ubuntu
+        asset_path: mapeditor_ubuntu
         asset_name: mapeditor_ubuntu
         asset_content_type: application/octet-stream
 
@@ -135,6 +137,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: windows-executable/mapeditor_windows.exe
+        asset_path: mapeditor_windows.exe
         asset_name: mapeditor_windows.exe
         asset_content_type: application/octet-stream
