@@ -183,7 +183,7 @@ class MapEditor(QMainWindow):
             "<h3>Map Editor</h3>"
             "<p>Version 1.0</p>"
             "<p>Developed by: noob3-3</p>"
-            '<p>GitHub: <a href="https://github.com/noob3-3">https://github.com/noob3-3</a></p>'
+            '<p>GitHub: <a href="https://github.com/noob3-3/MapEditor.git">https://github.com/noob3-3/MapEditor.git</a></p>'
             "<p>This application uses Qt for Python (PySide2/PyQt5).</p>"
             "<p>Qt is a free and open-source widget toolkit for creating graphical user interfaces.</p>"
         )
