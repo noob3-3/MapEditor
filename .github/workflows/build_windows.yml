@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-          platform: [ubuntu, windows]
+        platform: [ubuntu, windows]
 
     steps:
     - name: Checkout code
@@ -43,9 +43,13 @@ jobs:
       run: |
         pip install pyinstaller
 
+    - name: Update package list
+      if: matrix.platform == 'windows'
+      run: sudo apt-get update
+
     - name: Install Wine (if building for Windows)
       if: matrix.platform == 'windows'
-      run: sudo apt-get install -y wine64
+      run: sudo apt-get install -y wine64 --fix-missing
 
     - name: Build executable
       run: |
